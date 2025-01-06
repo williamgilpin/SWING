@@ -1,5 +1,5 @@
 from __future__ import print_function
-from setuptools import setup
+from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 import io
 import os
@@ -42,7 +42,8 @@ setup(
     author_email='jfinkle@u.northwestern.edu',
     description='Sliding window inference methods',
     long_description=long_description,
-    packages=['Swing'],
+    #packages=['Swing'],
+    packages=find_packages(include=["Swing", "Swing.*"]),
     include_package_data=True,
     platforms='any',
     classifiers=[],
