@@ -409,10 +409,10 @@ class Swing(object):
                 if pcs is not None:
                     window.num_pcs = pcs
             if show_progress:
+                print(f"Fitting window {i} of {self.get_n_windows()}")
                 if window.td_window:
-                    print("Fitting window index %i against the following window indices: ")
-                else:
-                    print("Fitting window {} of {}".format(window.nth_window, self.get_n_windows()))
+                    print(f"Fitting window index {window.nth_window} against the following window indices: {window.earlier_windows}")
+                    
             window.fit_window()
 
         return self.window_list
